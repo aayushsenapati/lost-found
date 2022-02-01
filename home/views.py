@@ -25,7 +25,11 @@ def reported(request):
 
         if form.is_valid():
             form.save()
-            return redirect('thankyou')
+
+            #return redirect('thankyou')
+            return render(request,'thankyou.html')# no need to go to thank you function now
+    else:
+        return render(request,'index.html')
 
 
 
