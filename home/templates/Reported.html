@@ -1,0 +1,62 @@
+{% load static %}
+<html lang="en">
+  <head>
+	  <style>
+
+body {
+   background-color: lighten($baseColor, 30%);
+   * { box-sizing: border-box; }
+}
+img {
+   border-radius: 50%;
+   height: 100px;
+   width: 100px;
+}
+
+#items {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#items td, #items th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#items tr:nth-child(even){background-color: #ADD8E6;}
+
+#items th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4682B4;
+  color: white;
+}
+	  </style>
+	  <meta charset="UTF-8">
+	  <title>Title</title>
+  </head>
+<body>
+
+   <table cellspacing="0" id="items">
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+		  <th>Picture</th>
+      </tr>
+	   <tbody>
+	   {% for report in id %}
+	   <tr>
+		   <td>{{report.name}}</td>
+		   <td>{{report.description}}</td>
+			<td><img src="{{ report.image.url }}" /></td>
+	   </tr>
+	   {% endfor %}
+	   </tbody>
+
+      <tr>
+   </table>
+</body>
+</html>
+
