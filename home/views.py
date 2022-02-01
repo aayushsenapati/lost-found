@@ -26,10 +26,9 @@ def reported(request):
         if form.is_valid():
             form.save()
             return redirect('thankyou')
-    else:
-        form = ReportForm()
 
-    return render(request,'Reported.html',{'form': form})
+
+
 
 
 def success(request):
